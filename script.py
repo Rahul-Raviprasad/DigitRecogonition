@@ -44,3 +44,16 @@ class ClassificationAlgorithms:
 
     def get_score(self, X_test, Y_test):
         print(self.classifier.score(X_test, Y_test))
+
+def main():
+    dp = DataProcessing('enterCSVFilePathHere')
+    dp.get_data_from_csv
+    dp.get_features_and_labels
+    dp.do_scaling
+    dp.split_train_and_test_data
+
+    ClassificationObject = ClassificationAlgorithms()
+    ClassificationObject.get_classifier('knn', dp.X_train, dp.Y_train)
+    ClassificationObject.get_score(dp.X_test, dp.Y_test)
+
+main()
