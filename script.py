@@ -32,3 +32,15 @@ class DataProcessing:
     def split_train_and_test_data(self):
         from sklearn.model_selection import train_test_split
         self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(self.features, self.label, test.size = 0.3)
+
+class ClassificationAlgorithms:
+    def __init__(self):
+        self.classifier = None
+
+    def get_classifier(self, classifier_type, X_train, Y_train):
+        if(classifier_type == 'knn'):
+            from sklearn import neighbors
+            self.classifier = neighbors.kneighbors.classifier().fit(X_train, Y_train)
+
+    def get_score(self, X_test, Y_test):
+        print(self.classifier.score(X_test, Y_test))
